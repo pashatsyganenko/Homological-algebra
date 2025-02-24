@@ -4,7 +4,8 @@
 #let theorem = thmbox("теорема", "Теорема", stroke: 0.7pt, radius: 0em).with(base_level: 0)
 #let lemma = thmbox("лемма", "Лемма", stroke: 0.7pt, radius: 0em).with(base_level: 0)
 #let proposition = thmbox("предложение", "Предложение", stroke: 0.7pt, radius: 0em).with(base_level: 0)
-#let corollary = thmplain("следствие", "Следствие", stroke: 0.6pt, inset: 1em, radius: 0em).with(numbering: none)
+#let corollary = thmplain("следствие", "Следствие", stroke: 0.6pt, inset: 1em, radius: 0em).with(numbering: "")
+//#let note = thmplain("замечание", "Замечание", stroke: 0.2pt, inset: 1em, radius: 0em).with(numbering: none)
 #let definition = thmbox("определение", "Определение", stroke: 0.7pt, radius: 0em).with(base_level: 0)
 #let example = thmplain("пример", "Пример", stroke: 0.5pt, inset: 1em, radius: 0em).with(numbering: none)
 #let proof = thmproof("доказательство", "Доказательство")
@@ -14,12 +15,11 @@
 #let author = rgb("#DC143C"); //цвет комментов
 #let scal(fst,scn) = $angle.l fst, scn angle.r$ // скалярное произведение
 #let svo = text(12pt)[#underline[_Свойства_]#h(0.5mm):\ ] //СВОйства
-#let note = text(12pt)[#underline[_Замечание_]#h(0.5mm):]
 #let fact = text(12pt)[#underline[_Факт_]#h(0.5mm):]
 #let diam = "diam" // диаметр
 #let char(x) = [$"char" thin #x$] // характеристика поля
 #let Rad(x) = [$"Rad" thin #x$] // радикал модуля
-#let ann(x) = [$"ann" thin #x$] // аннулятор
+#let Ann(x) = [$"Ann" thin #x$] // аннулятор
 #let Ker(x) = [$"Ker" thin #x$] // ядро
 #let ru_alph(pattern: "а)") = { // Это всё для РУZZКОЙ нумерации
   let alphabet = "абвгдежзиклмнопрстуфхцчшщэюя".split("")
@@ -42,6 +42,15 @@
   f
 }
 
+// note without a border
+#let note(body) = {
+  figure(kind: "note", supplement: "Замечание", numbering: none)[
+    #set align(left)
+    #text(12pt)[#underline[_Замечание_]#h(0.5mm):]
+    #body
+  ]
+}
+
 #let scam-alert(body) = {
   set text(font: "Arial", size: 12pt)
   set block(
@@ -54,10 +63,16 @@
   block[
     #set text(font: "Arial", size: 14pt, weight: "bold")
     #set align(center)
-    #text(font: "Segoe UI Emoji")[⚠️] #text(fill: red)[SCAM ALERT] #text(font: "Segoe UI Emoji")[⚠️]
+    ⚠️#text(fill: red)[SCAM ALERT]⚠️
 
-    #set text(font: "Arial", size: 12pt, weight: "regular")
+    #set text(size: 12pt, weight: "regular")
     #set align(left)
     #body
   ]
+}
+
+#let numbered-link(dest, body) = context {
+  let thms = query(selector(<meta:thmenvcounter>).after(dest))
+  let number = thmcounters.at(thms.first().location()).at("latest")
+  link(dest)[#body #number.first()]
 }
