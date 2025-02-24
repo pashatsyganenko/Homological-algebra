@@ -164,3 +164,5 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
   Допустим, что включение слева направо уже доказано. Рассмотрим $overline(A) := A slash J(A)$ 
   Бля щас бы...
 ]
+
+// Так, гит должен работать
