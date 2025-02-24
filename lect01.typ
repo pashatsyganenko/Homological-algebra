@@ -75,8 +75,10 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
   $ M arrow.twohead^pi M slash U tilde.equiv A x tilde.equiv A slash #h(-0.1mm)Ann(x) arrow.twohead^f S, $
   так что будем считать, что $f pi : M -> S$. Положим $N := Ker(f pi)$, тогда так как $M slash N tilde.equiv S$, то $N$ -- максимальный подмодуль. $U subset.eq N$ по построению и $x in N$ по определению радикала. Тогда $M = A x + U subset.eq N$. Противоречие.
 ]
-#note Мы не пользовались конечномерностью, так что на самом деле это верно для модулей над любым ассоциативным кольцом с единицей.
 
+#note[
+  Мы не пользовались конечномерностью, так что на самом деле это верно для модулей над любым ассоциативным кольцом с единицей.
+]
 Перед тем как доказать следующую теорему, упомянем факт, который на лекции был дан как упражнение.
 #proposition[
   $X lt.eq.slant Rad(M) arrow.double.long Rad(M / X) = Rad(M) / X$.
