@@ -30,7 +30,7 @@
 
 #let iff = $arrow.l.r.double.long$ // тогда и только тогда когда
 #let ipath = "/Images/" //путь где картинки
-#let author = rgb("#DC143C"); //цвет комментарий Павла Юрича
+#let author = rgb("#DC143C"); //цвет комментов
 #let scal(fst,scn) = $angle.l fst, scn angle.r$ // скалярное произведение
 #let svo = text(12pt)[#underline[_Свойства_]#h(0.5mm):\ ] //СВОйства
 #let note = text(12pt)[#underline[_Замечание_]#h(0.5mm):]
@@ -61,12 +61,10 @@
   f
 }
 
-//Конспект написан на основе лекций Сергея Витальевича Кислякова, прочитанных в осеннем семетре 2024-2025 учебного года. Конспект написан #link("https://t.me/ariviento")[Павлом Цыганенко].
-
 
 #align(center, text(20pt, font: "Linux Biolinum O")[*ГОМОЛОГИЧЕСКАЯ АЛГЕБРА*])
 #align(center, text(13pt, font: "FreeMono")[_Андрей Вячеславович Семёнов_])
-#align(center, text(10pt, font: "Linux Biolinum O")[*_КОНСПЕКТ ЗА АВТОРСТВОМ ПАВЛА ЦЫГАНЕНКО_*])
+#align(center, text(10pt, font: "Linux Biolinum O")[*_КОНСПЕКТ ЗА АВТОРСТВОМ ПАВЛА ЦЫГАНЕНКО И ЛЬВА МУКОСЕЕВА_*])
 #outline(title: "Содержание", indent: 1em,)
 //#set page(numbering: "1")
 //#counter(page).update(1)
@@ -164,5 +162,3 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
   Допустим, что включение слева направо уже доказано. Рассмотрим $overline(A) := A slash J(A)$ 
   Бля щас бы...
 ]
-
-// Так, гит должен работать
