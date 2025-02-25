@@ -12,17 +12,20 @@
 #let proof = thmproof("доказательство", "Доказательство")
 
 #let iff = $arrow.l.r.double.long$ // тогда и только тогда когда
-#let ipath = "/Images/" //путь где картинки
+//#let ipath = "/Images/" //путь где картинки -- пока их нет
 #let author = rgb("#DC143C"); //цвет комментов
-#let scal(fst,scn) = $angle.l fst, scn angle.r$ // скалярное произведение
-#let svo = text(12pt)[#underline[_Свойства_]#h(0.5mm):\ ] //СВОйства
+#let comment(x) = text(fill:author)[#x]
+//#let scal(fst,scn) = $angle.l fst, scn angle.r$ // скалярное произведение -- понадобится - откроем
+#let properties = text(12pt)[#underline[_Свойства_]#h(0.5mm):\ ] //СВОйства
+// Я не спешу переделывать свойства в блок, потому что к лишним красным строкам отношусь настороженно
 #let fact = text(12pt)[#underline[_Факт_]#h(0.5mm):]
 #let diam = "diam" // диаметр
 #let char(x) = [$"char" thin #x$] // характеристика поля
 #let Rad(x) = [$"Rad" thin #x$] // радикал модуля
 #let Ann(x) = [$"Ann" thin #x$] // аннулятор
 #let Ker(x) = [$"Ker" thin #x$] // ядро
-#let ru_alph(pattern: "а)") = { // Это всё для РУZZКОЙ нумерации
+#let Im(x) = [$"Im" thin #x$] // образ
+#let ru_alph(pattern: "а)") = { // это для русской нумерации
   let alphabet = "абвгдежзиклмнопрстуфхцчшщэюя".split("")
   let f(i) = {
     let letter = alphabet.at(i)
