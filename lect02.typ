@@ -33,3 +33,43 @@
     $M = lim_(arrow^n) M_n$, где $M_n$ конечнопорождённые. $Rad(M) = lim_(arrow^n) Rad(M_n)$ так как радикал сохраняется при гомоморфизмах. Тогда $Rad(M)$ мал так как $ |Rad(M)-Rad(M_n)| < epsilon arrow.double Rad(M) + K = M. $
   ]
 ]
+
+= Проективные модули
+== Свойства
+
+#definition[
+  Модуль $P_R$ называется проективным, если $ forall f : P -> N quad forall sigma : M arrow.twohead N quad exists g: P -> M : f = sigma g. $
+  #align(center, diagram(cell-size: 15mm, {
+  let (P,M,N) = ((1,0),(0,1),(1,1))
+  node(P, $P$)
+  edge(P, N,  label-side: left, $forall f$, "->")
+  edge(P, M, $exists g$, "-->") 
+  node(M, $M$)
+  edge(M, N, label-side: right, $forall sigma$, "->>")
+  node(N, $N$)
+  }))]
+
+#lemma[
+  Любой свободный модуль проективен.
+]
+#proof[
+  Рассмотрим свободный модуль $F$ и зафиксируем диаграмму #align(center, diagram(cell-size: 15mm, {
+    let(M,N,F) = ((0,0),(1,0),(2,0))
+    node(M,$M$)
+    node(N,$N$)
+    node(F,$F$)
+    edge(M, N, $sigma$, "->>")
+    edge(N, F, $f$, "<-")
+  }))
+  Пусть ${w_j}_(j in I)$ -- базис $F$, $f(w_j) = y_j$. Так как $sigma$ сюръективно, $forall j in I : exists x_j in M : sigma(x_j) = y_j $.
+  Положив $g(w_j) = x_j$ замкнём диаграмму до коммутативной:
+  #align(center, diagram(cell-size: 15mm, {
+    let(M,N,F) = ((0,0),(1,0),(2,0))
+    node(M,$M$)
+    node(N,$N$)
+    node(F,$F$)
+    edge(M, N, $sigma$, "->>")
+    edge(N, F, $f$, "<-")
+    edge(F, M, $g$, bend: 30deg, "->")
+  }))
+]
