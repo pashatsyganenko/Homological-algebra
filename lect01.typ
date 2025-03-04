@@ -26,7 +26,7 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
 
 Следующую теорему вам должны были доказать в школьном курсе по некоммутативным кольцам.
 #theorem("Веддерберна — Артина")[
-  Если $R$ артиново, то $ R med #text[-- полупростое] #iff R = product_(j in I) M_(n_j) (D_j), quad D_j med #text[-- тела]. $
+  Если $R$ артиново, то $ R med #text[-- полупростое] #iff R = product_(j = 1)^m M_(n_j) (D_j), quad D_j med #text[-- тела]. $
 ]
 То есть полупростое артиново кольцо разлагается в прямое произведение матричных колец над телами, и в предположении артиновости обратное тоже верно.
 
@@ -93,7 +93,7 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
 ]
 #proof[
   Допустим, что включение $Rad(M) supset.eq J(A) M$ уже доказано. Обозначим за #box($overline(A) := A slash J(A)$). #numbered-link(<nil-theorem>)[Теорема] утверждает, что алгебра $overline(A)$ полупроста. Рассмотрим $overline(M) := M slash J(A)M$, который в силу $Ann(M) supset.eq J(A)$ является $overline(A)$ - модулем. По #link(<semisimple-note>)[замечанию о полупростоте кольца], $M$ является полупростым модулем, из чего по 
-  #numbered-link(<radfactor-prop>)[предложению] следует, что $Rad(M) subset.eq J(A) M$.
+  #numbered-link(<radfactor-prop>)[предложению] следует, что $Rad(M) = J(A) M$.
   
   Докажем включение в обратную сторону.
   #align(center)[
