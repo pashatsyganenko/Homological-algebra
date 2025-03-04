@@ -59,7 +59,9 @@
 ]
 #proof[
 $arrow.double:$ Следует из определения.\
-$arrow.double.l$:
+$arrow.double.l$: Рассмотрим мономорфизм $X >-> Y$. Будем мыслить $X$ как подмодуль $Y$. Пусть $f: X -> M$. $ W = {(Z,h) | h: Z -> M, space X subset.eq Z subset.eq Y, space h|_X = f }. $
+Понятно, что $W eq.not diameter$. Пусть $(Z_1,h_1) prec.curly.eq (Z_2,h_2) iff Z_1 subset.eq Z_2 " и " h_2|_Z_1 = h_1$. Если $cal(C)$ -- цепь в $W$, то $(union.big_((Z,h) in cal(C)) Z, H)$, где $H$ продолжает все $h$, является её верхней гранью. Тогда по лемме Цорна существует максимальный элемент $(T,g)$. Предположим, что $T eq.not Y$, пусть $t in Y without T$. Определим $J = {r in R | r b in T}$ и $s : J -> M$ как $s(r) = g(r b)$. По предположению $s$ продолжается до отображения $k: R -> M$. Пусть $N = T + R b supset.neq T$, $N subset.eq Y$. Положим $q: N -> M$ как $q(t) = g(t)$ для всех $t in T$ и $q(r b) = k(r)$ для $r in R$. Так как $T inter R b = J b$ и для всех $r in J$ имеем $g(r b) = s(r) = $ $k(r)$, то $q$ корректно определён. Получили $(T,g) prec.curly.eq (N,q)$, что противоречит максимальности.
+
 ]
 
 #lemma[
