@@ -25,6 +25,11 @@
 #let Ann(x) = [$"Ann" thin #x$] // аннулятор
 #let Ker(x) = [$"Ker" thin #x$] // ядро
 #let Im(x) = [$"Im" thin #x$] // образ
+#let Hom(r, a, b) = [$op("Hom")_#r (#a, #b)$]
+#let RMod(R) = [$#R"-Mod"$] // Категория левых модулей
+#let ModR(R) = [$"Mod-"#R$] // Категория правых модулей
+#let Id = "Id" // тождественный функтор
+#let bl(x, ind) = [$attach(#x, bl: #ind)$] // Правый нижний индекс
 #let ru_alph(pattern: "а)") = { // это для русской нумерации
   let alphabet = "абвгдежзиклмнопрстуфхцчшщэюя".split("")
   let f(i) = {
@@ -49,17 +54,24 @@
 // note without a border
 #let note(body) = {
   figure(kind: "note", supplement: "Замечание", numbering: none)[
-    #set align(left)
-    #text(12pt)[#underline[_Замечание_]#h(0.5mm):]
-    #body
+    #block(
+        width: 100%,
+        radius: 0.3em,
+        breakable: false,
+        [
+          #set align(left)
+          #text(12pt)[#underline[_Замечание_]#h(0.5mm):]
+          #body
+        ]
+    )
   ]
 }
 
 #let scam-alert(body) = {
   set text(font: "Arial", size: 12pt)
   set block(
-    width: 80%,
-    inset: 1em,
+    width: 100%,
+    inset: 0.5em,
     fill: rgb(255, 230, 230),
     stroke: (left: 2pt + red, right: 2pt + red, top: 2pt + red, bottom: 2pt + red)
   )
