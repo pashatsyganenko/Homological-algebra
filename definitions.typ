@@ -68,7 +68,7 @@
 }
 
 #let scam-alert(body) = {
-  set text(font: "Arial", size: 12pt)
+  //set text(font: "Arial", size: 12pt)
   set block(
     width: 100%,
     inset: 0.5em,
@@ -77,7 +77,7 @@
   )
 
   block[
-    #set text(font: "Arial", size: 14pt, weight: "bold")
+    #set text(size: 14pt, weight: "bold")
     #set align(center)
     ⚠️#text(fill: red)[SCAM ALERT]⚠️
 
