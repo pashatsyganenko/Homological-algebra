@@ -11,6 +11,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install fonts from repository
+        run: |
+          # Create fonts directory
+          mkdir -p ~/.local/share/fonts/
+          
+          # Copy all font files from the fonts directory to the system fonts directory
+          echo "Copying fonts from repository's fonts folder..."
+          cp fonts/*.ttf ~/.local/share/fonts/ || echo "No .ttf fonts found"
+          cp fonts/*.otf ~/.local/share/fonts/ || echo "No .otf fonts found"
+          
+          # Update font cache
+          fc-cache -f -v
+          
+          # List installed fonts for verification
+          echo "Installed fonts:"
+          fc-list | grep ".local/share/fonts"
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
         with:
