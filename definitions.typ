@@ -29,6 +29,7 @@
 #let RMod(R) = [$#R"-Mod"$] // Категория левых модулей
 #let ModR(R) = [$"Mod-"#R$] // Категория правых модулей
 #let Id = "Id" // тождественный функтор
+#let scr(it) = text(features: ("ss01",),box($cal(it)$)) // mathscr-шрифт
 #let bl(x, ind) = [$attach(#x, bl: #ind)$] // Правый нижний индекс
 #let ru_alph(pattern: "а)") = { // это для русской нумерации
   let alphabet = "абвгдежзиклмнопрстуфхцчшщэюя".split("")
