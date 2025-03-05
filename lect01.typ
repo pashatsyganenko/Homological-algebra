@@ -10,10 +10,10 @@ $ sum_(g in G) alpha_g g + sum_(g in G) beta_g g = sum_(g in G) (alpha_g + beta_
 $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y = g) alpha_x beta_y) g. $
 
 #definition[
-  Модуль $M_R$ называется простым, если он не содержит нетривиальных собственных подмодулей.
+  Модуль $bl(M,R)$ называется простым, если он не содержит нетривиальных собственных подмодулей.
 ]
 #definition[
-  Модуль $M_R$ называется полупростым, если любой его подмодуль выделяется прямым слагаемым.
+  Модуль $bl(M,R)$ называется полупростым, если любой его подмодуль выделяется прямым слагаемым.
 ]
 То есть $forall N lt.eq.slant M : thick exists P lt.eq.slant M : thick M = M plus.circle N$.
 

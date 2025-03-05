@@ -8,18 +8,18 @@
 ]
 
 #corollary[
-  Любой полупростой модуль $M_A$ можно представить как $plus.circle.big_(i in I) P_i/(J(A) P_i)$.
+  Любой полупростой модуль $bl(M,A)$ можно представить как $plus.circle.big_(i in I) P_i/(J(A) P_i)$.
 ]
 
 #theorem[
-  У любого модуля $M_A$ существует проективное накрытие.
+  У любого модуля $bl(M,A)$ существует проективное накрытие.
 ] <proj-cover-exists-th>
 #proof[
   Обозначим за $overline(A) = A slash J(A)$ и рассмотрим $overline(A)$-модуль $overline(M) := M/(J(A)M)$, который по #link(<semisimple-note>)[замечанию о полупростоте кольца], будет являться полупростым модулем. По тому же замечанию модуль $overline(M)$ представляется в виде 
-  $ overline(M)_overline(A) = plus.circle.big_(i in I) S_i $где $S_i$ - простые $overline(A)$-модули. 
+  $ bl(overline(M),overline(A)) = plus.circle.big_(i in I) S_i $где $S_i$ - простые $overline(A)$-модули. 
   
   Отображение факторизации $A ->>^p overline(A)$ задает функтор из $RMod(overline(A)) -> RMod(A)$, который превращает произвольный #box($overline(A)$+"-модуль") $N$ в $A$-модуль последующим образом: $a dot n = p(a) dot n, forall a in A, forall n in N$. Нетрудно убедится в аддитивности данного функтора, откуда имеем разложение уже над кольцом $A$:
-  $ M_A = plus.circle.big_(i in I) S_i $
+  $ bl(M,A) = plus.circle.big_(i in I) S_i $
   где $S_i$ - по-прежнему простые, но уже $A$-модули. По #link(<semisimple-as-undecomposable>)[следствию выше], каждый $S_i = P_i slash J P_i$, где $P_i$ - это главный неразложимый модули, а $J := J(A)$. Обозначим за $pi_i: P_i ->> S_i$ и определим 
   $ pi := plus.circle.big_(i in I) pi_i: plus.circle.big_(i in I) P_i ->> overline(M) = plus.circle.big_(i in I) S_i $
   тогда $ker(pi) = plus.circle.big_(i in I)ker(pi_i) = plus.circle.big_(i in I)J P_i = J (plus.circle.big_(i in I) P_i) = J P = Rad(P)$, что является малым модулем, где $P := plus.circle.big_(i in I) P_i$.
@@ -52,7 +52,7 @@
 == Инъективные модули
 
 #definition[
-  Модуль $Q_R$ называется инъективным, если $ forall f : X >-> Y quad forall g : X -> Q quad exists h: Y -> Q : g = h f. $
+  Модуль $bl(Q,R)$ называется инъективным, если $ forall f : X >-> Y quad forall g : X -> Q quad exists h: Y -> Q : g = h f. $
   #align(center, diagram(cell-size: 15mm, {
   let (X,Y,Q) = ((0,0),(1,0),(0,0.7))
   node(Q, $Q$)
@@ -73,11 +73,11 @@
 ]<inj-prop>
 
 #definition[
-  Модуль $bl(M, R)$ над ассоциативном кольцом с единицей называется делимым, если для всех $r in R$ уравнение $r x = y$ разрешимо относительно $x$ и $y$, то есть $ forall r in R quad forall y in M quad exists x in M : r x = y. $
+  Модуль $bl(M, R)$ над ассоциативном кольцом с единицей называется делимым, если для всех $r in R$ уравнение $r x = y$ разрешимо относительно $x$ и $y$, то есть $ forall r in R without {0} quad forall y in M quad exists x in M : r x = y. $
 ]
 
 #note[
-  Это условие эквивалентно тому, что $forall r in R : r M = M$.
+  Это условие эквивалентно тому, что $forall r in R without {0} : r M = M$.
 ]
 
 Следующее утверждение на лекции было дано без доказательства, но для полноты изложения мы его привели. Также оно было дано в предположении нётеровости $R$, но она нигде не используется и в интернете про неё ни слова.
@@ -96,15 +96,15 @@
 #proof[
 $arrow.double:$ Следует из определения.\
 $arrow.double.l$: Рассмотрим мономорфизм $X >-> Y$. Будем мыслить $X$ как подмодуль $Y$. Пусть $f: X -> M$. $ W = {(Z,h) | h: Z -> M, space X subset.eq Z subset.eq Y, space h|_X = f }. $
-Понятно, что $W eq.not diameter$. Пусть $(Z_1,h_1) prec.curly.eq (Z_2,h_2) iff Z_1 subset.eq Z_2 " и " h_2|_Z_1 = h_1$. Если $cal(C)$ -- цепь в $W$, то $(union.big_((Z,h) in cal(C)) Z, H)$, где $H$ продолжает все $h$, является её верхней гранью. Тогда по лемме Цорна существует максимальный элемент $(T,g)$. Предположим, что $T eq.not Y$, пусть $t in Y without T$. Определим $J = {r in R | r t in T}$ и $s : J -> M$ как $s(r) = g(r t)$. По предположению $s$ продолжается до отображения $k: R -> M$. Пусть $N = T + R t supset.neq T$, $N subset.eq Y$. Положим $q: N -> M$ как $q(t) = g(t)$ для всех $t in T$ и $q(r b) = k(r)$ для $r in R$. Так как $T inter R b = J b$ и для всех $r in J$ имеем $g(r b) = s(r) = $ $k(r)$, то $q$ корректно определён. Получили $(T,g) prec.curly.eq (N,q)$, что противоречит максимальности.
+Понятно, что $W eq.not diameter$. Пусть $(Z_1,h_1) prec.curly.eq (Z_2,h_2) iff Z_1 subset.eq Z_2 " и " h_2|_Z_1 = h_1$. Если $cal(C)$ -- цепь в $W$, то $(union.big_((Z,h) in cal(C)) Z, H)$, где $H$ продолжает все $h$, является её верхней гранью. Тогда по лемме Цорна существует максимальный элемент $(T,g)$. Предположим, что $T eq.not Y$, пусть $b in Y without T$. Определим $J = {r in R | r b in T}$ и $s : J -> M$ как $s(r) = g(r b)$. По предположению $s$ продолжается до отображения $k: R -> M$. Пусть $N = T + R b supset.neq T$, $N subset.eq Y$. Положим $q: N -> M$ как $q(t) = g(t)$ для всех $t in T$ и $q(r b) = k(r)$ для $r in R$. Так как $T inter R b = J b$ и для всех $r in J$ имеем $g(r b) = s(r) = $ $k(r)$, то $q$ корректно определён. Получили $(T,g) prec.curly.eq (N,q)$, что противоречит максимальности.
 ]
 
 #lemma[
-  Пусть $R$ -- кольцо главных идеалов. Тогда $M$ делимый #iff $M$ инъективный.
+  Пусть $R$ -- область главных идеалов. Тогда $M$ делимый #iff $M$ инъективный.
 ]
 #proof[
 $arrow.double:$ Воспользуемся критерием Бэра, продолжим отображение $f: I -> M$ на всё $R$. Пусть $I = angle.l r angle.r$. По делимости $ exists x in M : r x = f(r)$. Тогда отображение $g: R -> M$, $1 |-> x$ продолжает $f$ так как $g(r) = r x = f(r)$.\
-$arrow.double.l:$ Выберем $r in R$ и $y in M$. Отображение $f : r R -> M$, $r |-> y$ продолжимо до $g: R -> M$. Тогда $ y = f(r) = g(r) = r g(1). $
+$arrow.double.l:$ Выберем $r in R without {0}$ и $y in M$. Отображение $f : R r -> M$, $r |-> y$ продолжимо до $g: R -> M$, но прежде стоит сказать, что $f$ вообще определено корректно, ведь по целостности кольца ситуации $l_1 r = l_2 r$ быть не может. Тогда $ y = f(r) = g(r) = r g(1). $
 ]
 //Как видно, доказывая делимость инъективного модуля мы не пользовались главностью каждого идеала, то есть это верно и без неё. Приведём пример, показывающий, что обратное в общем случае неверно. На лекции его не было, это просто авторское дополнение.
 //#example[
