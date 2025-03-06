@@ -73,7 +73,7 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
   $M$ полупрост $arrow.double.long$ $Rad(M) = 0$.
 ]
 #proof[
-  Допустим существует $x in Rad(M) without {0}$. Как и всякий подмодуль, $A x$ можно выделить в прямую сумму: $M = Ax plus.circle U$. Если рассмотреть стандартный эпиморфизм $A -> A x : med 1 arrow.bar x$, то станет очевидно, что $A x tilde.equiv A slash #h(-0.1mm) Ann(x)$. Вложение $Ann(x)$ в максимальный идеал $I$, его содержащий, индуцирует эпиморфизм $A slash #h(-0.1mm) Ann(x) arrow.twohead A slash I$, причём $S := A slash I$ -- простая алгебра. Имеем такую композицию
+  Допустим существует $x in Rad(M) without {0}$. Как и всякий подмодуль, $A x$ можно выделить в прямую сумму: $M = A x plus.circle U$. Если рассмотреть стандартный эпиморфизм $A -> A x : med 1 arrow.bar x$, то станет очевидно, что $A x tilde.equiv A slash #h(-0.1mm) Ann(x)$. Вложение $Ann(x)$ в максимальный идеал $I$, его содержащий, индуцирует эпиморфизм $A slash #h(-0.1mm) Ann(x) arrow.twohead A slash I$, причём $S := A slash I$ -- простая алгебра. Имеем такую композицию
   $ M arrow.twohead^pi M slash U tilde.equiv A x tilde.equiv A slash #h(-0.1mm)Ann(x) arrow.twohead^f S, $
   так что будем считать, что $f pi : M -> S$. Положим $N := Ker(f pi)$, тогда так как $M slash N tilde.equiv S$, то $N$ -- максимальный подмодуль. $U subset.eq N$ по построению и $x in N$ по определению радикала. Тогда $M = A x + U subset.eq N$. Противоречие.
 ]
