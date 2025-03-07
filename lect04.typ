@@ -60,7 +60,7 @@
 Далле считаем $R$ ассоциативным кольцом с единицей, а $A$ конечномерной алгеброй над полем $KK$.
 
 #definition[
-  Подмодуль $N lt.eq.slant M$ называется существенным, если $forall X lt.eq.slant M : N inter X eq.not 0$.
+  Подмодуль $N lt.eq.slant M$ называется существенным, если $forall 0 eq.not X lt.eq.slant M : N inter X eq.not 0$.
 ]
 
 #definition[
@@ -73,7 +73,12 @@
   Цоколем модуля $bl(M,R)$ называется $Soc(M) = sum_(N lt.eq.slant M #text[\ прост]) N$.
 ]
 
-#comment[ТУТ ПРО ТО, ПОЧЕМУ ЦОКОЛЬ СУЩЕСТВЕННЕ]
+#proposition[
+  Цоколь -- существенный подмодуль.
+]
+#proof[
+  Рассмотрим $X lt.eq.slant M$. Если $X$ простой, он лежит в цоколе, иначе возьмём ненулевой $x in X$, подмодуль $R x$ прост, поэтому $X inter Soc(M) supset.eq R x eq.not 0$.
+]
 
 #theorem[
   $bl(S,A)$ прост $arrow.double$ существует инъективная оболчка и она конечнопорождена. 
@@ -84,13 +89,27 @@
 ]
 
 #theorem[
-  У любого модуля существует инъективная оболочка.
+  У любого модуля $bl(M,A)$ существует инъективная оболочка.
 ]
 #proof[
-  #comment[А, что? Не слышу]
+  Рассмотрим вложение $Soc(M) >->^i M$. Уже знаем, что
+  - $Soc(M)$ -- существенный подмодуль $M$
+  - $Soc(M) = plus.circle.big_(alpha in I) S_alpha$, где все $S_alpha$ просты. #comment[Почему?]
+  Как мы только что поняли, у каждого $S_alpha$ есть инъективная оболочка $S_alpha >->^(j_alpha) Q_alpha$, каждый $Im(j_alpha)$ существеннен в $Q_alpha$. Положим $Q = plus.circle.big_(alpha in I) Q_alpha$. Так как $A$ нётерово, по #numbered-link(<sum-injective-th>)[теореме] $Q$ инъективен.
+  #align(center, diagram(cell-size: 7mm, label-size: 4mm, {
+    let (A,B,C) = ((0,0),(1.5,0),(0,1))
+    node(A,$Soc(M)$)
+    node(B,$M$)
+    node(C,$plus.circle.big_(alpha in I) Q_alpha$)
+    edge(A,B,$i$,">->")
+    edge(B,C,$exists g$,label-side: left,"-->")
+    edge(A,C,$j := plus.circle.big_(alpha in I) j_alpha$,label-size: 2.7mm,"->")
+  }))
+  Получаем отображение $g: M -> Q$, $g i = j$. Проверим, что $g$ мономорфизм. Пусть $Ker(g) eq.not 0$, тогда по существенности $Soc(M) inter Ker(g) eq.not 0$, выберем ненулевой $x in Soc(M) inter Ker(g)$. $ j(x) = g i(x) = g(x) = 0 space arrow.double space x = 0. $
+  Остаётся лишь сказать, почему образ $g$ существеннен. Действительно, $Im(g) supset.eq Im(j) = plus.circle.big_(alpha in I) Im(j_alpha)$, существенность последнего очевидным образом следует из существенности каждого $Im(j_alpha)$ в $Q_alpha$.\
 ]
 
-#comment[2 (два) следствия]
+#comment[2 (ДВА) СЛЕДСТВИЯ]
 
 #theorem[
   Пусть $G$ -- конечная группа, $A = KK G$ -- её групповая алгебра. Тогда $bl(A,A) tilde.equiv cal(D)(A_A)$.
