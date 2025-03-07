@@ -32,7 +32,7 @@ $ (sum_(g in G) alpha_g g) dot (sum_(g in G) beta_g g) = sum_(g in G) (sum_(x y 
 
 #theorem("Машке")[
   Пусть $k$ -- поле, $abs(G) < infinity$, $char(k) = 0$ или $char(k) divides.not abs(G)$. Тогда $k G$ -- полупростая алгебра.
-]
+] <mashke-th>
 #proof[
   Покажем, что произвольный модуль $M$ над $k G$ полупрост. Рассмотрим $N lt.eq.slant M$, пусть $tilde(pi)$ -- $k$-линейная проекция, постоянная на $N$: $ N arrow.r.tail M arrow.twohead^(tilde(pi)) N. $
   Определим усреднение $tilde(pi)$: $ pi(x) = 1/abs(G) sum_(g in G) g tilde(pi) (g^(-1) x). $

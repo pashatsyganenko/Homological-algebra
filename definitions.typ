@@ -29,6 +29,8 @@
 #let Hom(r, a, b) = [$op("Hom")_#r (#a, #b)$]
 #let RMod(R) = [$#R"-Mod"$] // Категория левых модулей
 #let ModR(R) = [$"Mod-"#R$] // Категория правых модулей
+#let Rmod(R) = [$#R"-mod"$] // Категория левых к.п. модулей
+#let modR(R) = [$"mod-"#R$] // Категория правых к.п. модулей
 #let Id = "Id" // тождественный функтор
 #let scr(it) = text(features: ("ss01",),box($cal(it)$)) // mathscr-шрифт
 #let bl(x, ind) = [$attach(#x, bl: #ind)$] // Правый нижний индекс

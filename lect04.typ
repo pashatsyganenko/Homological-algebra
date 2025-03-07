@@ -1,8 +1,59 @@
 #import "definitions.typ": *
 
+#let dual = $cal(D)$;
 
-#comment[ПРОДОЛЖЕНИЕ ПРО ДВОЙСТВЕННОСТЬ]
+#theorem[
+  Конечнопорожденный модуль $bl(P, A)$ проективен #iff $dual(P)$ инъективен.
+]
+#proof[
+  Пусть $P$ проективный модуль. Для доказательства инъективности $dual(P)$, достаточно проверить, что $dual(P) >->^i X$ расщепляется, $forall X in ModR(A)$. Рассмотрим два случая:
 
+    + $X$ конечнопорожден. Применим функтор #dual. $dual(X) ->>^dual(i) dual^2(P) tilde.eq^phi P$ по свойству     проективности $P$ расщепляется: $dual(X) = dual^2(P) plus.circle Y$ и $dual(i) = "pr"_1$.
+      #align(center, diagram(cell-size: 30mm, {
+        let (X, P) = ((0, 0), (1, 0))
+        node(X, $dual(X) = dual^2(P) plus.circle Y$)
+        node(P, $dual^2(P)$)
+        edge(X, P, "->>", $dual(i) = "pr"_1$)
+      }))
+      Применим $dual$ еще раз)
+      #align(center, diagram(cell-size: 20mm, {
+        let (X, P) = ((1, 0), (0, 0))
+        let (DX, DP) = ((1, 0.8), (0, 0.8))
+        node(X, $dual^2(X) = dual^3(P) plus.circle dual(Y)$)
+        node(P, $dual^3(P)$)
+        node(DX, $X$)
+        node(DP, $dual(P)$)
+        edge(X, P, "<-<", $dual^2(i)$, right)
+        edge(DX, DP, "<-<", $i$, right)
+        edge(X, DX, "=>", $eta_X$)
+        edge(P, DP, $eta_dual(P)$, "=>")
+      }))
+
+      Получилось, что $i$ изоморфен расщепляющемуся морфизму, значит и сам расщепляется. 
+
+    + Теперь пусть $X$ произвольный. Обозначим за $Q := dual(P)$, можем считать, что он подмодуль $X$. Тогда $X = lim_arrow.long M_alpha$, где $Q subset M_alpha <= X$ - конечнопорожденные подмодули, содержащие $Q$. По первому пункту, каждый модуль $M_alpha = N_alpha plus.circle Q$, и при этом существует морфизм трех диаграмм с общей направленной системой:
+      #align(center, diagram(cell-size: 15mm, {
+        let (Q, A, P) = ((0, 0), (1, 0), (2, 0))
+        let (QQ, B, PP) = ((0, 0.8), (1, 0.8), (2, 0.8))
+        node(A, $M_alpha = N_alpha plus.circle Q$)
+        node(B, $M_beta = N_beta plus.circle Q$)
+        node(Q, $Q$)
+        node(P, $Q$)
+        node(QQ, $Q$)
+        node(PP, $Q$)
+        edge(A, B, "hook->", $j_(alpha, beta)$)
+        edge(Q, QQ, "=", $id$)
+        edge(P, PP, "=", $id$)
+        edge(Q, A, "hook->")
+        edge(QQ, B, "hook->")
+        edge(A, P, "->>")
+        edge(B, PP, "->>")
+        edge(Q, P, "->", $id$, bend:25deg)
+        edge(QQ, PP, "->", $id$, bend:-25deg)
+      }))
+
+      где $j_(a,b)$ обыкновенное вложение $M_alpha$ в $M_beta$. Отсюда имеется отображение между прямыми пределами: $Q >->^i X ->^p Q$, которое и дает искомое расщепление, так как $lim_arrow.long$ это функтор, и следовательно $p compose i = id_Q$.
+]
 
 == Инъективные оболочки
 
@@ -55,7 +106,12 @@
   В категории $RMod(KK G)$, $abs(G) < infinity$ классы проективных и инъективных модулей совпадают.
 ]
 #proof[
-  #comment[ПОЧ]
+  По #link(<mashke-th>)[теореме Машке] алгебра $KK G$ полупроста и поэтому распадается на прямую сумму простых подмодулей. В нашей терминологии эти простые слагаемые назывались главными неразложимыми. Отсюда имеем 
+  $ A_1 plus.circle  dots plus.circle A_k = A tilde.eq D(A) = D(A_1) plus.circle dots plus.circle D(A_k) $
+
+  и из единственности разложения получим, что главные неразложимые под действием #dual переходят в изоморфные главные неразложимые. 
+
+  Тогда модуль $Q$ является инъективным #iff $dual(Q)$ является проективным #iff $dual(Q)$ является #link(<proj-desc-cor>)[прямой суммой главных неразложимых] #iff $Q tilde.eq dual^2(Q)$ является прямой суммой главных неразложимых #iff $Q$ проективен.
 ]
 
 = Когомологии
