@@ -26,6 +26,7 @@
 #let Ker(x) = [$"Ker" thin #x$] // ядро
 #let Im(x) = [$"Im" thin #x$] // образ
 #let Soc(x) = [$"Soc" thin #x$] // цоколь
+#let Com(x) = [$"Com"(#x$)] // категория комплексов
 #let Hom(r, a, b) = [$op("Hom")_#r (#a, #b)$]
 #let RMod(R) = [$#R"-Mod"$] // Категория левых модулей
 #let ModR(R) = [$"Mod-"#R$] // Категория правых модулей

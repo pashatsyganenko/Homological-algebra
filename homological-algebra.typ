@@ -15,7 +15,7 @@
   strong(it)
 }
 #set page(width: 210mm, height: 297mm, margin: 1.5cm, numbering: none, number-align: right, header: [#counter(footnote).update(0)])
-#set heading(numbering: "1.")
+#set heading(numbering: "1.1")
 
 #align(center, text(20pt, font: "Linux Biolinum O")[*ГОМОЛОГИЧЕСКАЯ АЛГЕБРА*])
 #align(center, text(13pt, font: "FreeMono")[_Андрей Вячеславович Семёнов_])
