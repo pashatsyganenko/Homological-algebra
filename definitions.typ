@@ -1,6 +1,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/cetz:0.3.0"
 #import "@preview/fletcher:0.5.5" as fletcher: diagram, node, edge
+#import fletcher.shapes: pill, rect
 
 #let theorem = thmbox("теорема", "Теорема", stroke: 0.7pt, radius: 0em).with(base_level: 0)
 #let lemma = thmbox("лемма", "Лемма", stroke: 0.7pt, radius: 0em).with(base_level: 0)
@@ -24,6 +25,9 @@
 #let Rad(x) = [$"Rad" thin #x$] // радикал модуля
 #let Ann(x) = [$"Ann" thin #x$] // аннулятор
 #let Ker(x) = [$"Ker" thin #x$] // ядро
+#let coker(x) = [$op("coker")(#x)$] // коядро
+#let pullback = [$angle.right.rev$] // символ pullback'a
+#let pushout = scale(y: -100%)[$angle.right$] // символ pullback'a
 #let Im(x) = [$"Im" thin #x$] // образ
 #let Soc(x) = [$"Soc" thin #x$] // цоколь
 #let Com(x) = [$"Com"(#x$)] // категория комплексов
