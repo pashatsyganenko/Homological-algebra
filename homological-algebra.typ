@@ -32,3 +32,5 @@
 #include "lect04.typ"
 // Лекция 5 (12.03.2025)
 #include "lect05.typ"
+// Лекция 5 (19.03.2025)
+#include "lect06.typ"
