@@ -167,14 +167,14 @@
 ]
 
 #definition[
-  Последовательность $(X_circle.filled.small,d_circle.filled.small)$ модулей и гомоморфизмов $d_n : X_n -> X_(n+1)$ называется _комплексом_, если $forall k in ZZ : d_(k+1) d_k = 0$.
+  Последовательность $(X^circle.filled.small,d^circle.filled.small)$ модулей и гомоморфизмов $d^n : X^n -> X^(n+1)$ называется _комплексом_, если $forall k in ZZ : d^(k+1) d^k = 0$.
   #align(center, diagram(cell-size: 7mm, label-size: 3mm, {
     let (A,B,C,D,E) = ((-1,0),(0,0),(1,0),(-2,0),(2,0))
-    node(A,$X_(n)$)
-    node(B,$X_(n+1)$)
-    node(C,$X_(n+2)$)
-    edge(A,B,$d_n$,"->")
-    edge(B,C,$d_(n+1)$,"->")
+    node(A,$X^(n)$)
+    node(B,$X^(n+1)$)
+    node(C,$X^(n+2)$)
+    edge(A,B,$d^n$,"->")
+    edge(B,C,$d^(n+1)$,"->")
     node(D,$dots.c$)
     node(E,$dots.c$)
     edge(D,A,"->")
@@ -183,30 +183,30 @@
 ]
 
 #definition[
-  Морфизмом комплексов $(X_circle.filled.small,d^X_circle.filled.small)$ и $(Y_circle.filled.small,d^Y_circle.filled.small)$ называется семество отображений $h_circle.filled.small = {h_k : X_k -> Y_k}_(k in ZZ)$ такое, что $forall k in ZZ : d^Y_n h_n = h_(n+1) d^X_n$.
+  Морфизмом комплексов $(X^circle.filled.small,d_X^circle.filled.small)$ и $(Y^circle.filled.small,d_Y^circle.filled.small)$ называется семество отображений $h^circle.filled.small = {h^k : X^k -> Y^k}_(k in ZZ)$ такое, что $forall k in ZZ : d_Y^n h^n = h^(n+1) d_X^n$.
   #align(center, diagram(cell-size: 7mm, label-size: 3mm, {
     let (A,B,C,D,E) = ((-1,0),(0,0),(1,0),(-2,0),(2,0))
     let (Y1,Y2,Y3,Y4,Y5) = ((-2,1),(-1,1),(0,1),(1,1),(2,1))
-    node(A,$X_(n)$)
-    node(B,$X_(n+1)$)
-    node(C,$X_(n+2)$)
-    edge(A,B,$d^X_n$,"->")
-    edge(B,C,$d^X_(n+1)$,"->")
+    node(A,$X^(n)$)
+    node(B,$X^(n+1)$)
+    node(C,$X^(n+2)$)
+    edge(A,B,$d_X^n$,"->")
+    edge(B,C,$d_X^(n+1)$,"->")
     node(D,$dots.c$)
     node(E,$dots.c$)
     edge(D,A,"->")
     edge(C,E,"->")
     node(Y1,$dots.c$)
-    node(Y2,$Y_n$)
-    node(Y3,$Y_(n+1)$)
-    node(Y4,$Y_(n+2)$)
+    node(Y2,$Y^n$)
+    node(Y3,$Y^(n+1)$)
+    node(Y4,$Y^(n+2)$)
     node(Y5,$dots.c$)
     edge(Y1,Y2,"->")
-    edge(Y2,Y3,$d^Y_n$,"->")
-    edge(Y3,Y4,$d^Y_(n+1)$,"->")
+    edge(Y2,Y3,$d_Y^n$,"->")
+    edge(Y3,Y4,$d_Y^(n+1)$,"->")
     edge(Y4,Y5,"->")
-    edge(A,Y2,$h_n$,label-side: left,"->")
-    edge(B,Y3,$h_(n+1)$,label-side: left,"->")
-    edge(C,Y4,$h_(n+2)$,label-side: left,"->")
+    edge(A,Y2,$h^n$,label-side: left,"->")
+    edge(B,Y3,$h^(n+1)$,label-side: left,"->")
+    edge(C,Y4,$h^(n+2)$,label-side: left,"->")
   }))
 ]

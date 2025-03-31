@@ -1,7 +1,5 @@
 #import "definitions.typ": *
 
-#comment[Семёнов тут перенёс индексы наверх и определял не в модулях, а в абелевой категории.]
-
 Тем самым мы определили категорию комплексов $Com(cal(A))$ некоторой абелевой категории $cal(A)$.
 
 #theorem[
@@ -46,18 +44,18 @@
 ]
 
 #definition[
-  Когомологиями комплекса $X^circle.filled.small$ называются $H^n(X^circle.filled.small) := Ker(d^n) slash Im(d^(n-1))$.
+  Когомологиями комплекса $X^circle.filled.small$ называются $H^n (X^circle.filled.small) := Ker(d^n) slash Im(d^(n-1))$.
 ]
-Они определены так как из условия $d^(n+1) d^n = 0$ следует $Ker(d^n) supset.eq Im(d^(n-1))$. Теперь определим когомологии на морфизмах. Рассмотрим $f: X^circle.filled.small -> Y^circle.filled.small$. Фиксируем $overline(x) in H^n(X^circle.filled.small)$. $ H^n (f)(overline(x)) := f(x) + Im(d_Y^(n-1)) = overline(f(x)). $
-- Корректность определения очевидна.
+Они определены так как из условия $d^(n+1) d^n = 0$ следует $Ker(d^n) supset.eq Im(d^(n-1))$. Теперь определим когомологии на морфизмах. Рассмотрим $f: X^circle.filled.small -> Y^circle.filled.small$. Фиксируем $overline(x) in H^n (X^circle.filled.small)$. $ H^n (f)(overline(x)) := f(x) + Im(d_Y^(n-1)) = overline(f(x)). $
+- Корректность определения очевидна: $ x-y in Im(d^(n-1)_X) arrow.double exists z in X^(n-1) : d_X^(n-1) (z) = x-y arrow.double f(x-y) = f d_X^(n-1) (z) = d_Y^(n-1) f (z) in Im(d_Y^(n-1)). $
 - $d_n^Y (f(x)) = f^(n+1)(overline(d_X^n (x))) = 0 arrow.double f(x) in Ker(f^n)$.
 - $H^n (1)=1$.
-Тем самым $H$ -- функтор.
 
 #note[
   + $H^n (f+g) = H^n (f) + H^n (g)$.
   + $H^n (f g) = H^n (f) H^n (g)$.
 ]
+Тем самым $H$ -- аддитивный ковариантный функтор $Com(cal(A)) arrow.long Com(cal(A))$.
 
 #definition[
   Комплес $X^circle.filled.small$ называется ацикличным, если $H^n (X) = 0 quad forall n in NN$.
