@@ -113,27 +113,29 @@
   + $(g_1 g_2)_* = g_(1 *) g_(2 *)$.
 ]
 #proof[
+  Рассмотрим $E: space A >->^(alpha) B ->>^(beta) C$.
+  + 
   #align(center, diagram(cell-size: 7mm, label-size: 3mm, {
   let(A1,B1,C1,A2,B2,C2,A3,B3,C3) = ((0,0),(1,0),(2,0),(0,1),(1,1),(2,1),(0,2),(1,2),(2,2))
   node(A1,$A$)
   node(A2,$A$)
   node(A3,$A$)
-  node(B1,$B_3$)
-  node(B2,$B_2$)
-  node(B3,$B_1$)
-  node(C1,$C_3$)
-  node(C2,$C_2$)
-  node(C3,$C_1$)
+  node(B1,$B_2$)
+  node(B2,$B_1$)
+  node(B3,$B$)
+  node(C1,$C_2$)
+  node(C2,$C_1$)
+  node(C3,$C$)
   edge(A1,A2,"=")
   edge(A2,A3,"=")
   edge(C1,C2,$f_2$,"->")
   edge(C2,C3,$f_1$,"->")
-  edge(A1,B1,$alpha_3$,">->")
-  edge(A2,B2,$alpha_2$,">->")
-  edge(A3,B3,$alpha_1$,">->")
-  edge(B1,C1,$beta_3$,"->>")
-  edge(B2,C2,$beta_2$,"->>")
-  edge(B3,C3,$beta_1$,"->>")
+  edge(A1,B1,$alpha_2$,">->")
+  edge(A2,B2,$alpha_1$,">->")
+  edge(A3,B3,$alpha$,">->")
+  edge(B1,C1,$beta_2$,"->>")
+  edge(B2,C2,$beta_1$,"->>")
+  edge(B3,C3,$beta$,"->>")
   edge(B1,B2,$h_2$,"->")
   edge(B2,B3,$h_1$,"->")
   let c = 3
@@ -229,3 +231,24 @@
   edge(A,B,$mat(alpha_1, 0; 0, alpha_2)$,">->")
   edge(B,C,$mat(beta_1, 0; 0, beta_2)$,"->>")
 }))
+
+#lemma[
+  + $(1 plus.circle Delta) Delta = (Delta plus.circle 1) Delta$.
+  + $nabla (1 plus.circle nabla) = nabla (nabla plus.circle 1)$.
+]
+#proof[
+  + $ mat(1,0;0,1;0,1) mat(1;1) = mat(1;1;1) = mat(0,1;1,0;1,0) mat(1;1). $
+  + $ mat(1,1) mat(1,0,0;0,1,1) = mat(1,1,1) = mat(1,1) mat(1,1,0;0,0,1). $
+]
+
+#lemma[
+  + $(f_1 + f_2)^* = f_1^* + f_2^*$.
+  + $(g_1 + g_2)_* = g_(1 *) + g_(2 *)$.
+]
+#proof[
+  Пумпумпум
+]
+
+#theorem[
+  $epsilon(C,A)$ -- абелева группа по сложению Бэра.
+]
