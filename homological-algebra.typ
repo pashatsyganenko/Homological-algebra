@@ -35,6 +35,6 @@
 // Лекция 6 (19.03.2025)
 #include "lect06.typ"
 // Лекция 7 (26.03.2025)
-// TODO
+#include "lect07.typ"
 // Лекция 8 (09.04.2025)
 #include "lect08.typ"
