@@ -20,26 +20,56 @@
 #let properties = text(12pt)[#underline[_Свойства_]#h(0.5mm):\ ] //СВОйства
 // Я не спешу переделывать свойства в блок, потому что к лишним красным строкам отношусь настороженно
 #let fact = text(12pt)[#underline[_Факт_]#h(0.5mm):]
-#let diam = "diam" // диаметр
-#let char(x) = [$"char" thin #x$] // характеристика поля
-#let Rad(x) = [$"Rad" thin #x$] // радикал модуля
-#let Ann(x) = [$"Ann" thin #x$] // аннулятор
-#let Ker(x) = [$"Ker" thin #x$] // ядро
-#let coker(x) = [$op("coker")(#x)$] // коядро
-#let pullback = [$angle.right.rev$] // символ pullback'a
-#let pushout = scale(y: -100%)[$angle.right$] // символ pullback'a
-#let Im(x) = [$"Im" thin #x$] // образ
-#let Soc(x) = [$"Soc" thin #x$] // цоколь
-#let Com(x) = [$"Com"(#x$)] // категория комплексов
+// Диаметр
+#let diam = "diam" 
+// Характеристика поля
+#let char(x) = [$"char" thin #x$] 
+// Радикал модуля
+#let Rad(x) = [$"Rad" thin #x$] 
+// Аннулятор
+#let Ann(x) = [$"Ann" thin #x$] 
+// Ядро
+#let Ker(x) = [$"Ker" thin #x$] 
+// Коядро
+#let coker(x) = [$op("coker")(#x)$] 
+// Символ pullback'a
+#let pullback = [$angle.right.rev$] 
+// Символ pullback'a
+#let pushout = scale(y: -100%)[$angle.right$] 
+// node pullback'a для использования в diagram
+#let pb-node(to) = node((rel: (0.1, 0.1), to: to), pullback) 
+// node pushout'a для использования в diagram
+#let po-node(to) = node((rel: (-0.1, -0.1), to: to), pushout) 
+// Образ
+#let Im(x) = [$"Im" thin #x$] 
+// Цоколь
+#let Soc(x) = [$"Soc" thin #x$] 
+// Категория комплексов
+#let Com(x) = [$"Com"(#x$)] 
+// Функтор Hom
 #let Hom(r, a, b) = [$op("Hom")_#r (#a, #b)$]
-#let RMod(R) = [$#R"-Mod"$] // Категория левых модулей
-#let ModR(R) = [$"Mod-"#R$] // Категория правых модулей
-#let Rmod(R) = [$#R"-mod"$] // Категория левых к.п. модулей
-#let modR(R) = [$"mod-"#R$] // Категория правых к.п. модулей
-#let Id = "Id" // тождественный функтор
-#let scr(it) = text(features: ("ss01",),box($cal(it)$)) // mathscr-шрифт
-#let bl(x, ind) = [$attach(#x, bl: #ind)$] // Правый нижний индекс
-#let ru_alph(pattern: "а)") = { // это для русской нумерации
+// Категория левых модулей
+#let RMod(R) = [$#R"-Mod"$] 
+// Категория правых модулей
+#let ModR(R) = [$"Mod-"#R$] 
+// Категория левых к.п. модулей
+#let Rmod(R) = [$#R"-mod"$] 
+// Категория правых к.п. модулей
+#let modR(R) = [$"mod-"#R$] 
+// Ext функтор
+#let Ext = [$"Ext"$] 
+// Tor функтор
+#let Tor = [$"Tor"$] 
+// Тождественный функтор
+#let Id = "Id" 
+// Когомологии хохшильда
+#let Hoch = [$op("HH")$]
+// mathscr-шрифт
+#let scr(it) = text(features: ("ss01",),box($cal(it)$)) 
+// Правый нижний индекс
+#let bl(x, ind) = [$attach(#x, bl: #ind)$] 
+// это для русской нумерации
+#let ru_alph(pattern: "а)") = { 
   let alphabet = "абвгдежзиклмнопрстуфхцчшщэюя".split("")
   let f(i) = {
     let letter = alphabet.at(i)
@@ -77,7 +107,6 @@
 }
 
 #let scam-alert(body) = {
-  //set text(font: "Arial", size: 12pt)
   set block(
     width: 100%,
     inset: 0.5em,
